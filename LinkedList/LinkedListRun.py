@@ -2,38 +2,43 @@ import LinkedListClass as LL
 
 if __name__ == "__main__":   
 
-    
-    #Generate Linked List
+    #1-Generate Linked List
     linkList = LL.SingleLinkedList(1)
     linkList.connect(2)
     linkList.connect(3)
     linkList.connect(4)
     linkList.connect(1)
     linkList.connect(2)
-    #Check Linked List
+
+    #2-Check Linked List
     print (linkList.length)
     print (linkList.checkExist(3))
     print (linkList.checkExist(6))   
     linkList.printList()
-    #Reverse Linked List
+
+    #3-Reverse Linked List
     linkList.reverseLinkedList()    
     linkList.printList()
-    #Reverse it back
+
+    #4-Reverse it back
     linkList.reverseLinkedList()
     linkList.printList()
-    #Insert one noed
+
+    #5-Insert one noed
     linkList.insertNodeLinkedList(5,5)
     linkList.printList()
     print(linkList.length)
     print(linkList.isEmpty)
-    #Delete one node by index
+
+    #6-Delete one node by index
     linkList.deleteNodeLinkedListPosition(100)
     linkList.printList()
     linkList.deleteNodeLinkedListPosition(3)
     linkList.printList()
     print(linkList.length)
     print(linkList.isEmpty)
-    #Delete one node by value
+
+    #7-Delete one node by value
     linkList.deleteNodeLinkedListValue(100)
     linkList.printList()
     linkList.deleteNodeLinkedListValue(2)
@@ -50,7 +55,8 @@ if __name__ == "__main__":
     linkList.printList()
     print (linkList.length)
     print (linkList.isEmpty)
-    #Insert one node again
+
+    #8-Insert one node again
     linkList.insertNodeLinkedList(1,1000)
     linkList.printList()
     print(linkList.length)
