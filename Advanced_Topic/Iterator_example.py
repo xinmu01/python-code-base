@@ -3,10 +3,11 @@ class Reverse:
     def __init__(self, data):
         self.data = data
         self.index = len(data)
-
+    # After define the __iter__, the for in loop can be used.
     def __iter__(self):
         return self
 
+    # As long as define __next__, the next() and iter() can be used.
     def __next__(self):
         if self.index == 0:
             raise StopIteration
@@ -20,11 +21,34 @@ a = Reverse("I am Xin")
 print (next(a))
 for i in a:
     print (i)
+print()
+
+a.reset()
+for i in a:
+    print(i)
+print()
 
 a.reset()
 b = iter(a)
 print (next(b))
+for i in b:
+    print(i)
+print()
 
+test_list = [1,2,3]
+test_list_iter = iter(test_list)
+print(next(test_list_iter))
+print(next(test_list_iter))
+print(next(test_list_iter))
+
+def generator_example(a):
+    for i in a:
+        yield i
+
+generator_example = generator_example([1,2,3])
+print(next(generator_example))
+for i in generator_example:
+    print (i)
 
 
 

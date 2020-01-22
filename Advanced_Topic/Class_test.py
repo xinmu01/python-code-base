@@ -9,8 +9,9 @@ class test_str:
 
 test = test_str()
 
-print (test)
+print (test) #This prints out __str__
 print (test.__doc__)
+print(test_str) #This cannot print __str__
 print (test_str.__doc__)
-help(test_str)
-help(test)
+#help(test_str)
+#help(test)
