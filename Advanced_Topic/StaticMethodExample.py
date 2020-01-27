@@ -1,4 +1,4 @@
-class A(object):
+class A():
     
     x = "hi" # x is the static attribute 
 
@@ -24,11 +24,12 @@ a.static_foo(4)
 A.static_foo(5)
 
 #Static Variable in Function
-def static_var():
-    static_var.a += 1
-    print (static_var.a)
-static_var.a =0
+def static_var_1(): 
+    static_var_1.a += 1
+    print (static_var_1.a)
 
-static_var()
-static_var()
-static_var()
+static_var_1.a =0
+
+static_var_1()
+static_var_1()
+static_var_1()
