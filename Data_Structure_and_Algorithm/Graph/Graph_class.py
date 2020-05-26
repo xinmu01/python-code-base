@@ -19,17 +19,15 @@ class Graph:
         self.numVertices = 0
     def addVertex(self,key):
         self.numVertices += 1
-        newVertex = Vertex(key)
-        self.vertList[key] = newVertex
-        #return newVertex
-    def getVertex(self,n):
-        if n in self.vertList:
-            return self.vertList[n]
+        self.vertList[key] = Vertex(key)
+    def getVertex(self,key):
+        if key in self.vertList:
+            return self.vertList[key]
         else:
-            print ("n is in graph")
+            print ("{} is not in graph".format(key))
             return None
-    def __contains__(self,n): ## overload in
-        return n in self.vertList
+    def __contains__(self,key): ## overload in
+        return key in self.vertList
     def addEdge(self, f, t, weight = 0):
         if f not in self.vertList:
             self.addVertex(f)
@@ -54,7 +52,7 @@ if __name__ == "__main__":
     g.addEdge(4,0,1)
     g.addEdge(5,4,8)
     g.addEdge(5,2,1)
-    for v in g: ## This use __iter__
+    for v in g: ## This uses __iter__
         for w in v.getConnections(): 
             #print("(%s, %s)" % (v.getId(),w.getId()))
             print('({},{})'.format(v.getId(),w.getId()))
