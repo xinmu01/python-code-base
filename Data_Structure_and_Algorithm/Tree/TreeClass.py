@@ -13,10 +13,13 @@ class BinarySearchTree:
         self.root = BinaryTreeNode(rootValue)
 
     def treeHeight(self):
-        if not self.root:
+        return self.treeHeightHelper(self.root)
+        
+    def treeHeightHelper(self,root):
+        if not root:
             return 0
-        leftHeight = self.treeHeight(self.root.left)
-        rightHeight = self.treeHeight(self.root.right)
+        leftHeight = self.treeHeightHelper(root.left)
+        rightHeight = self.treeHeightHelper(root.right)
         return max(leftHeight,rightHeight) + 1
      
     def insertNode(self,value):
@@ -46,8 +49,36 @@ class BinarySearchTree:
         else:
             return self.searchNodeHelper(root.left,value)
 
-    def changeNode(self,value):
-        pass
+    def changeNode(self,value1,value2):
+        self.deleteNode(value1)
+        self.insertNode(value2)
 
     def deleteNode(self,value):
-        pass
+        self.root = self.deleteNodeHelper(self.root,value)
+    
+    def deleteNodeHelper(self,root,value):
+        if not root:
+            return root 
+        if value > root.val:
+            root.right = self.deleteNodeHelper(root.right, value)
+        elif value < root.val:
+            root.left = self.deleteNodeHelper(root.left, value)
+        else:
+            if not root.right:
+                return root.left
+            elif not root.left:
+                return root.right
+
+            temp = root.right 
+            while temp.left:
+                temp = temp.left 
+            
+            mini = temp.val 
+            root.val = mini 
+            root.right = self.deleteNodeHelper(root.right,mini)
+        return root 
+        
+
+if __name__ == "__main__":
+    BST = BinarySearchTree(3)
+    print (BST.treeHeight())
