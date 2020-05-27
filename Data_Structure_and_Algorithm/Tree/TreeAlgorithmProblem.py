@@ -90,10 +90,9 @@ def searchBST(root,value):
     if value == root.val:
         return True 
     elif value < root.val:
-        searchBST(root.left, value)
+        return searchBST(root.left, value)
     else:
-        searchBST(root.right, value)
-    return False
+        return searchBST(root.right, value)
 
 def sortedArrayToBST(nums):
     """
@@ -101,7 +100,6 @@ def sortedArrayToBST(nums):
     :rtype: TreeNode
     """
     if not nums or len(nums) == 0:
-        #print("Input list is empty")
         return                 
     if len(nums) == 1:
         return TreeNode(nums[0])
@@ -116,9 +114,10 @@ if __name__ == "__main__":
     insertBST(root,8)
     insertBST(root,7)
     insertBST(root,12)
-    #insertBST(root,10)
+    insertBST(root,10)
     insertBST(root,3)
-    #insertBST(root,11)
+    insertBST(root,11)
+    print()
     traversalTreeF(root)
     print()
     traversalTreeM(root)
@@ -130,3 +129,5 @@ if __name__ == "__main__":
     print("Height of Tree:", height_of_tree(root))
     print()
     print("MinDepth of Tree:", minDepth(root))
+    print()
+    print(searchBST(root,11))
