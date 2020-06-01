@@ -109,6 +109,37 @@ def sortedArrayToBST(nums):
     root.right = sortedArrayToBST(nums[middle + 1:])
     return root
 
+def leafSum(root):
+    leafs = []
+    leafSumHelper(root,leafs)
+    return sum(leafs)
+
+def leafSumHelper(node,leafs):
+    if node == None:
+        return 
+    if node.left == None and node.right == None:
+        leafs.append(node.val)
+    
+    leafSumHelper(node.left, leafs)
+    leafSumHelper(node.right, leafs)
+
+def treePath(root):
+    paths = []
+    treePathHelper(root,paths)
+
+def treePathHelper(node, paths):
+    if node == None:
+        return 
+    paths.append(node.val)
+    if node.left == None and node.right == None:
+        print("Path: ", paths)
+    
+    treePathHelper(node.left, paths)
+    treePathHelper(node.right, paths)
+
+    paths.pop()
+
+
 if __name__ == "__main__":
     root = TreeNode(10)
     insertBST(root,8)
