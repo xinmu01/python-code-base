@@ -35,12 +35,14 @@ for i in b:
     print(i)
 print()
 
+##Convert List to Iterator
 test_list = [1,2,3]
 test_list_iter = iter(test_list)
 print(next(test_list_iter))
 print(next(test_list_iter))
 print(next(test_list_iter))
 
+##Generator Example
 def generator_example(a):
     for i in a:
         yield i

@@ -100,7 +100,7 @@ def sortedArrayToBST(nums):
     :rtype: TreeNode
     """
     if not nums or len(nums) == 0:
-        return                 
+        return None                
     if len(nums) == 1:
         return TreeNode(nums[0])
     middle = len(nums)//2 
@@ -138,6 +138,17 @@ def treePathHelper(node, paths):
     treePathHelper(node.right, paths)
 
     paths.pop()
+
+def isIdentical(root1,root2):
+    if root1 == None and root2 == None:
+        return True
+    elif root1 == None or root2 == None:
+        return False
+
+    if root1.val != root2.val:
+        return False
+    else:
+        return isIdentical(root1.left, root2.left) and isIdentical(root1.right, root2.right)
 
 
 if __name__ == "__main__":

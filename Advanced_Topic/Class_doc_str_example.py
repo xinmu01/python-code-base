@@ -1,6 +1,6 @@
 # python class practice
 
-class test_str:
+class test_str():
     '''
     Hello world!
     '''

@@ -51,7 +51,6 @@ def insertNodeLinkedList(head,value,pos):
         temp.next = head
         return temp
     listLen = listLength(head)
-    print(listLen)
     if pos >= listLen:
         cur = head
         while cur.next:
