@@ -5,7 +5,7 @@ class Vertex:
     def addNeighbor (self, nbr, weight = 0): # nbr is a vertex object
         self.connectedTo[nbr] = weight
     def __str__(self):
-        return str(self.id) + "connected to " + str([x.id for x in self.connectedTo])
+        return str(self.id) + " connected to " + str([x.id for x in self.connectedTo])
     def getConnections(self):
         return self.connectedTo.keys()
     def getId(self):
@@ -37,7 +37,7 @@ class Graph:
     def getVertices(self):
         return self.vertList.keys()
     def __iter__(self):
-        return iter(self.vertList.values())
+         return iter(self.vertList.values())
 
 if __name__ == "__main__":
     g = Graph()
@@ -52,6 +52,12 @@ if __name__ == "__main__":
     g.addEdge(4,0,1)
     g.addEdge(5,4,8)
     g.addEdge(5,2,1)
+    
+    test = iter(g)
+    print(next(test))
+    for i in test:
+        print (i)
+
     for v in g: ## This uses __iter__
         for w in v.getConnections(): 
             #print("(%s, %s)" % (v.getId(),w.getId()))

@@ -3,11 +3,11 @@ class Reverse:
     def __init__(self, data):
         self.data = data
         self.index = len(data)
-    # After define the __iter__, the for in loop can be used.
+    # After define the __iter__, the iter() and for in loop can be used.
     def __iter__(self):
         return self
 
-    # As long as define __next__, the next() and iter() can be used.
+    #As long as define __next__, the next() can be used.
     def __next__(self):
         if self.index == 0:
             raise StopIteration

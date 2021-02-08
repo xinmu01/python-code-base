@@ -99,7 +99,7 @@ def process_content_chunk():
 
 #process_content_chunk()
 
-# 6 Chinking (removal of something)
+# 6 Chunking (removal of something)
 chunkGram = r"""Chunk: {<.*>+} 
                 }<VB.?|IN|DT|TO>+{"""  # This is regular expression. 
 chunkParser = nltk.RegexpParser(chunkGram)

@@ -74,7 +74,6 @@ def check_balance(root):
     else:
         return check_balance(root.left) and check_balance(root.right)
 
-
 def insertBST(root,value):
     if not root:
         return TreeNode(value)
